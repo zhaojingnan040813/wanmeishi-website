@@ -1,12 +1,16 @@
 {
-  "name": "wanmeishi-website",
-  "version": "1.0.0",
-  "description": "万媒师 - 全媒体发布与管理AI Agent官网",
-  "scripts": {
-    "build": "echo 'Build complete'",
-    "dev": "echo 'Dev server started'"
-  },
-  "keywords": ["wanmeishi", "ai-agent", "website"],
-  "author": "MiniMax Agent",
-  "private": true
+	"name": "wanmeishi-website",
+	"version": "1.0.0",
+	"description": "万媒师 - 全媒体发布与管理AI Agent官网",
+	"scripts": {
+		"build": "node build.js",
+		"dev": "echo 'Dev server started'"
+	},
+	"keywords": [
+		"wanmeishi",
+		"ai-agent",
+		"website"
+	],
+	"author": "MiniMax Agent",
+	"private": true
 }
