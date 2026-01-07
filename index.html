@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="万媒师 - 全媒体发布与管理AI Agent，一键分发至30+平台，AI辅助创作，本地安全部署">
+    <meta name="keywords" content="万媒师,全媒体发布,AI Agent,自媒体工具,内容分发,矩阵管理">
+    <title>万媒师 - 全媒体发布与管理AI Agent | 官方下载</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PingFang+SC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563EB'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E万%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav-logo">
+                <img src="png/logo.png" alt="万媒师" style="height: 40px;">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#features" class="nav-link">核心特性</a></li>
+                <li><a href="#download" class="nav-link">下载专区</a></li>
+                <li><a href="#pricing" class="nav-link">定价方案</a></li>
+                <li><a href="#about" class="nav-link">关于我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#download" class="btn btn-primary nav-cta">免费下载</a>
+                <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 首屏区域 -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">AI Agent 驱动的新一代内容管理工具</div>
+                <h1 class="hero-title">
+                    全媒体发布与管理<br>
+                    <span class="highlight">一个AI Agent就够了</span>
+                </h1>
+                <p class="hero-description">
+                    一键分发至30+主流平台，智能创作助手，本地安全部署。
+                    让内容运营效率提升10倍，专注创作本身。
+                </p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary btn-large" id="btnDownloadPrimary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>立即下载</span>
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large">了解更多</a>
+                </div>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Windows / macOS 双平台支持</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>本地运行 · 数据不上云</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="mockup-title">万媒师 - 智能发布中心</div>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-sidebar">
+                            <div class="platform-item active">
+                                <span class="platform-icon">抖</span>
+                                <span class="platform-name">抖音</span>
+                            </div>
+                            <div class="platform-item">
+                                <span class="platform-icon">小</span>
+                                <span class="platform-name">小红书</span>
+                            </div>
+                            <div class="platform-item">
+                                <span class="platform-icon">B</span>
+                                <span class="platform-name">B站</span>
+                            </div>
+                            <div class="platform-item">
+                                <span class="platform-icon">微</span>
+                                <span class="platform-name">微信</span>
+                            </div>
+                        </div>
+                        <div class="mockup-main">
+                            <div class="mockup-card">
+                                <div class="card-header">
+                                    <span class="card-title">发布新内容</span>
+                                    <span class="card-status success">已连接</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content-input" contenteditable="true">输入内容，AI自动适配多平台...</div>
+                                    <div class="content-actions">
+                                        <button class="action-btn">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+                                                <path d="M12 6v6l4 2" />
+                                            </svg>
+                                            AI优化
+                                        </button>
+                                        <button class="action-btn primary">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                            </svg>
+                                            一键发布
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-floating floating-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>发布成功</span>
+                </div>
+                <div class="hero-floating floating-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M8.5 12.5 L7 11 L7 8 Q7 6 9 6 L15 6 Q17 6 17 8 L17 11 L15.5 12.5"></path>
+                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                    </svg>
+                    <span>AI助手在线</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                    fill="#F8FAFC" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- 核心特性 -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">为什么选择万媒师？</h2>
+                <p class="section-description">专为内容创作者打造的AI Agent，让媒体运营更智能、更高效</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">一键分发</h3>
+                    <p class="feature-description">支持抖音、小红书、B站、微信公众号等30+主流平台，一次创作，全平台同步发布</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">AI智能创作</h3>
+                    <p class="feature-description">内置AI写作助手，智能生成标题、标签、封面建议，让创意灵感源源不断</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">数据聚合</h3>
+                    <p class="feature-description">整合全平台数据，统一看板展示播放量、粉丝增长、收益数据，洞察运营趋势</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">矩阵管理</h3>
+                    <p class="feature-description">多人协作，权限灵活分配，账号Cookie云端加密存储，团队管理更省心</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">本地安全</h3>
+                    <p class="feature-description">客户端本地运行，账号密码、Cookie等敏感数据不上传云端，保障账号安全</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">定时任务</h3>
+                    <p class="feature-description">预设发布时间，智能队列管理，自动定时发布，解放双手不熬夜</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载专区 -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">立即下载体验</h2>
+                <p class="section-description">支持 Windows 10/11 和 macOS 10.15+ 系统</p>
+            </div>
+            <div class="download-cards">
+                <div class="download-card windows">
+                    <div class="card-badge">Windows 版本</div>
+                    <div class="card-platform">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="#00A4EF">
+                            <path
+                                d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <h3>Windows 版</h3>
+                        <p class="version">版本 2.1.0 | 2024.01</p>
+                        <p class="size">文件大小：156 MB</p>
+                        <ul class="card-features">
+                            <li>支持 Windows 10/11</li>
+                            <li>一键安装，自动更新</li>
+                            <li>本地运行，绿色安全</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.wanmoshi.com/oss/download/win/万模师平台 Setup 0.0.1.exe"
+                        class="btn btn-primary btn-download" data-os="windows">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>下载 Windows 版 (.exe)</span>
+                    </a>
+                </div>
+                <div class="download-card mac">
+                    <div class="card-badge">macOS 版本</div>
+                    <div class="card-platform">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="#555555">
+                            <path
+                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <h3>macOS 版</h3>
+                        <p class="version">版本 2.1.0 | 2024.01</p>
+                        <p class="size">文件大小：182 MB</p>
+                        <ul class="card-features">
+                            <li>支持 Intel / M1 / M2 / M3 芯片</li>
+                            <li>支持 macOS 10.15+</li>
+                            <li>原生支持 Apple Silicon</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-download" data-os="mac">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>下载 macOS 版 (.dmg)</span>
+                    </a>
+                </div>
+            </div>
+            <div class="download-note">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>安全提示：为保障账号安全，请从官方网站下载，勿使用第三方修改版</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 定价方案 -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">灵活定价方案</h2>
+                <p class="section-description">根据需求选择合适版本，个人团队均适用</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">免费版</h3>
+                        <p class="pricing-subtitle">个人入门体验</p>
+                        <div class="pricing-price">
+                            <span class="price">¥0</span>
+                            <span class="period">/ 永久免费</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            绑定 3 个平台账号
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            基础内容发布功能
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            每日 5 次 AI 创作
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            基础数据统计
+                        </li>
+                        <li class="disabled">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            定时发布功能
+                        </li>
+                        <li class="disabled">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            团队协作
+                        </li>
+                    </ul>
+                    <a href="#download" class="btn btn-secondary btn-block">开始免费使用</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">推荐</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">专业版</h3>
+                        <p class="pricing-subtitle">个人创作者必备</p>
+                        <div class="pricing-price">
+                            <span class="price">¥99</span>
+                            <span class="period">/ 月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            绑定 30 个平台账号
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            全部发布功能
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            AI 创作无限次使用
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            完整数据统计分析
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            定时发布任务
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            优先技术支持
+                        </li>
+                    </ul>
+                    <a href="#download" class="btn btn-primary btn-block">立即升级专业版</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">团队版</h3>
+                        <p class="pricing-subtitle">MCN机构 & 企业团队</p>
+                        <div class="pricing-price">
+                            <span class="price">¥299</span>
+                            <span class="period">/ 月 · 5人起</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            无限平台账号绑定
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            全部发布功能
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            AI 创作无限次
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            团队协作 & 权限管理
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            API 接口支持
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            专属客服 & 私有化部署
+                        </li>
+                    </ul>
+                    <a href="mailto:business@wanmeishi.com" class="btn btn-secondary btn-block">联系商务</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">关于万媒师</h2>
+                    <p class="about-description">
+                        万媒师是一款专注于全媒体内容发布与管理的AI Agent产品，由一群热爱内容创作的工程师和产品经理打造。
+                    </p>
+                    <p class="about-description">
+                        我们深知自媒体创作者在多平台运营中的痛点：账号切换繁琐、内容排版耗时、数据分散难以整合。万媒师应运而生，旨在通过AI技术，帮助创作者从重复劳动中解放出来，专注于内容本身。
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>安全第一</h4>
+                                <p>本地运行，数据不上云</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>AI 驱动</h4>
+                                <p>智能创作，持续进化</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>用户至上</h4>
+                                <p>倾听反馈，快速迭代</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">支持平台</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">活跃用户</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">服务稳定性</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">技术支持</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-icon">万</div>
+                        <span class="logo-text">万媒师</span>
+                    </a>
+                    <p class="footer-description">全媒体发布与管理AI Agent，让内容运营更高效</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>产品</h4>
+                        <ul>
+                            <li><a href="#features">核心特性</a></li>
+                            <li><a href="#download">下载客户端</a></li>
+                            <li><a href="#pricing">定价方案</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>支持</h4>
+                        <ul>
+                            <li><a href="#">使用文档</a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法律</h4>
+                        <ul>
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">服务协议</a></li>
+                            <li><a href="#">版权声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 万媒师. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="微信">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M8.5 11c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm5 0c.83 0 1.5-.67 1.5-1.5S14.33 8 13.5 8 12 8.67 12 9.5s.67 1.5 1.5 1.5zm4.5 4c0 2.76-3.13 5-7 5-.87 0-1.69-.1-2.42-.28-.28.73-.83 1.34-1.56 1.65-.31.13-.65.2-1 .2-.53 0-1.04-.17-1.47-.48-.34-.25-.58-.6-.67-1-.09-.4-.04-.82.12-1.19.08-.19.13-.4.13-.62V11c0-2.76 3.13-5 7-5 .39 0 .77.02 1.14.07.32-.62.93-1.07 1.66-1.07.23 0 .44.05.64.13.2.09.37.22.5.38.08.1.14.21.18.33.13-.03.27-.05.41-.05 1.45 0 2.68.72 3.28 1.8.06.11.1.23.1.36v2.28zM4 7.5C4 5.57 5.57 4 7.5 4S11 5.57 11 7.5 9.43 11 7.5 11 4 9.43 4 7.5zm10.5 0c0-2.76-2.13-5-4.75-5S5 4.74 5 7.5s2.13 5 4.75 5c.31 0 .61-.02.91-.07.24-.04.48-.1.72-.19.16-.05.3-.13.43-.23.13-.1.24-.22.32-.36.08-.14.13-.3.15-.47v-.18c0-.55.45-1 1-1s1 .45 1 1v.63c0 .15-.04.3-.12.43-.08.13-.2.25-.33.34-.13.09-.28.16-.44.21-.27.08-.55.13-.84.15.46.46 1.08.73 1.78.73 1.27 0 2.3-1.03 2.3-2.3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="微博">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M10.098 20c-4.27 0-8.598-1.85-8.598-5.77 0-1.28.37-2.47 1.01-3.49.24-.39.42-.83.54-1.29.36-1.39 1.05-3.4 1.05-3.4s-.28-.56-.28-1.39c0-1.3.75-2.27 1.69-2.27.8 0 1.18.6 1.18 1.32 0 .8-.51 2-.77 3.11-.23.93.47 1.69 1.39 1.69 1.67 0 2.98-1.76 2.98-4.3 0-2.25-1.62-3.82-3.93-3.82-2.68 0-4.25 2.01-4.25 4.08 0 .81.31 1.67.7 2.14.08.09.09.17.07.26l-.28 1.16c-.05.19-.15.23-.35.14-1.31-.61-2.13-2.52-2.13-4.06 0-3.31 2.4-6.35 6.93-6.35 3.64 0 6.46 2.59 6.46 6.06 0 3.61-2.27 6.53-5.42 6.53-1.06 0-2.05-.55-2.39-1.2l-.65 2.49c-.24.91-.87 2.05-1.3 2.74.97.3 2 .46 3.07.46 4.27 0 8.1-1.77 8.1-5.71 0-1.28-.35-2.47-1.01-3.49-.24-.39-.42-.83-.54-1.29-.36-1.39-1.05-3.4-1.05-3.4s.28.56.28 1.39c0 1.3-.75 2.27-1.69 2.27-.8 0-1.18-.6-1.18-1.32 0-.8.51-2 .77-3.11.23-.93-.47-1.69-1.39-1.69-1.67 0-2.98 1.76-2.98 4.3 0 2.25 1.62 3.82 3.93 3.82 2.68 0 4.25-2.01 4.25-4.08 0-.81-.31-1.67-.7-2.14-.08-.09-.09-.17-.07-.26l.28-1.16c.05-.19.15-.23.35-.14 1.31.61 2.13 2.52 2.13 4.06 0 3.31-2.4 6.35-6.93 6.35-3.64 0-6.46-2.59-6.46-6.06 0-3.61 2.27-6.53 5.42-6.53 1.06 0 2.05.55 2.39 1.2l.65-2.49c.24-.91.87-2.05 1.3-2.74-.97-.3-2-.46-3.07-.46z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
