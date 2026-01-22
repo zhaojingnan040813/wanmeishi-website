@@ -2,7 +2,7 @@
  * 万媒师官网 - JavaScript 交互脚本
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 初始化所有功能
     initMobileMenu();
     initScrollHeader();
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initDownloadDetection();
     initActiveNavHighlight();
+    initMacDownloadDropdown();
 });
 
 /**
@@ -20,7 +21,7 @@ function initMobileMenu() {
     const navMenu = document.getElementById('navMenu');
 
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
@@ -28,14 +29,14 @@ function initMobileMenu() {
         // 点击菜单链接后关闭菜单
         const navLinks = navMenu.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
             });
         });
 
         // 点击外部关闭菜单
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
@@ -67,7 +68,7 @@ function initScrollHeader() {
  */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
 
@@ -116,6 +117,61 @@ function initScrollAnimations() {
 }
 
 /**
+ * macOS 下载下拉菜单
+ */
+function initMacDownloadDropdown() {
+    const macDownloadBtn = document.getElementById('macDownloadBtn');
+    const macDropdownMenu = document.getElementById('macDropdownMenu');
+    const downloadDropdown = macDownloadBtn?.closest('.download-dropdown');
+
+    if (!macDownloadBtn || !macDropdownMenu || !downloadDropdown) return;
+
+    // 点击按钮切换下拉菜单
+    macDownloadBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        downloadDropdown.classList.toggle('active');
+    });
+
+    // 点击下拉选项
+    const dropdownItems = macDropdownMenu.querySelectorAll('.dropdown-item');
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const chip = this.getAttribute('data-chip');
+
+            // 这里可以设置实际的下载链接
+            // const downloadUrl = chip === 'apple-silicon' 
+            //     ? 'YOUR_APPLE_SILICON_DOWNLOAD_URL' 
+            //     : 'YOUR_INTEL_DOWNLOAD_URL';
+
+            // 显示下载提示
+            showDownloadTip('mac', chip);
+
+            // 关闭下拉菜单
+            downloadDropdown.classList.remove('active');
+
+            // 实际下载逻辑
+            // window.location.href = downloadUrl;
+        });
+    });
+
+    // 点击外部关闭下拉菜单
+    document.addEventListener('click', function (e) {
+        if (!downloadDropdown.contains(e.target)) {
+            downloadDropdown.classList.remove('active');
+        }
+    });
+
+    // ESC 键关闭下拉菜单
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && downloadDropdown.classList.contains('active')) {
+            downloadDropdown.classList.remove('active');
+        }
+    });
+}
+
+/**
  * 下载按钮系统检测
  */
 function initDownloadDetection() {
@@ -156,7 +212,7 @@ function initDownloadDetection() {
 
     // 监听下载按钮点击
     downloadButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             const os = this.getAttribute('data-os');
 
             // 显示提示信息
@@ -168,11 +224,20 @@ function initDownloadDetection() {
 /**
  * 显示下载提示
  */
-function showDownloadTip(os) {
+function showDownloadTip(os, chip) {
     // 移除已存在的提示
     const existingTip = document.querySelector('.download-tip');
     if (existingTip) {
         existingTip.remove();
+    }
+
+    let message = '';
+    if (os === 'mac' && chip) {
+        message = chip === 'apple-silicon'
+            ? '正在准备下载 macOS (Apple Silicon) 安装包...'
+            : '正在准备下载 macOS (Intel) 安装包...';
+    } else {
+        message = `正在准备下载 ${os === 'windows' ? 'Windows' : 'macOS'} 安装包...`;
     }
 
     const tip = document.createElement('div');
@@ -192,9 +257,7 @@ function showDownloadTip(os) {
         z-index: 9999;
         animation: slideUp 0.3s ease-out;
     `;
-    tip.innerHTML = `
-        <span>正在准备下载 ${os === 'windows' ? 'Windows' : 'macOS'} 安装包...</span>
-    `;
+    tip.innerHTML = `<span>${message}</span>`;
 
     // 添加动画样式
     const style = document.createElement('style');
