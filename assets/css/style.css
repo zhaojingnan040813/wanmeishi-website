@@ -739,6 +739,11 @@ section {
 	overflow: hidden;
 }
 
+/* macOS 卡片需要显示下拉菜单，不能裁剪 */
+.download-card.mac {
+	overflow: visible;
+}
+
 .download-card::before {
 	content: "";
 	position: absolute;
@@ -861,7 +866,7 @@ section {
 
 .download-dropdown-menu {
 	position: absolute;
-	bottom: calc(100% + 8px);
+	top: calc(100% + 8px);
 	left: 0;
 	right: 0;
 	background: var(--color-white);
@@ -871,7 +876,7 @@ section {
 	overflow: hidden;
 	opacity: 0;
 	visibility: hidden;
-	transform: translateY(10px);
+	transform: translateY(-10px);
 	transition: all var(--transition-normal);
 	z-index: 100;
 }

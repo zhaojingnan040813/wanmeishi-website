@@ -141,9 +141,6 @@ function initMacDownloadDropdown() {
             const chip = this.getAttribute('data-chip');
             const downloadUrl = this.getAttribute('href');
 
-            // 显示下载提示
-            showDownloadTip('mac', chip);
-
             // 关闭下拉菜单
             downloadDropdown.classList.remove('active');
 
@@ -207,79 +204,6 @@ function initDownloadDetection() {
             }
         }
     });
-
-    // 监听下载按钮点击
-    downloadButtons.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            const os = this.getAttribute('data-os');
-
-            // 显示提示信息
-            showDownloadTip(os);
-        });
-    });
-}
-
-/**
- * 显示下载提示
- */
-function showDownloadTip(os, chip) {
-    // 移除已存在的提示
-    const existingTip = document.querySelector('.download-tip');
-    if (existingTip) {
-        existingTip.remove();
-    }
-
-    let message = '';
-    if (os === 'mac' && chip) {
-        message = chip === 'apple-silicon'
-            ? '正在准备下载 macOS (Apple Silicon) 安装包...'
-            : '正在准备下载 macOS (Intel) 安装包...';
-    } else {
-        message = `正在准备下载 ${os === 'windows' ? 'Windows' : 'macOS'} 安装包...`;
-    }
-
-    const tip = document.createElement('div');
-    tip.className = 'download-tip';
-    tip.style.cssText = `
-        position: fixed;
-        bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: ${os === 'windows' ? '#00A4EF' : '#555'};
-        color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 500;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 9999;
-        animation: slideUp 0.3s ease-out;
-    `;
-    tip.innerHTML = `<span>${message}</span>`;
-
-    // 添加动画样式
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
-    document.body.appendChild(tip);
-
-    // 3秒后移除提示
-    setTimeout(() => {
-        tip.style.animation = 'slideUp 0.3s ease-out reverse';
-        setTimeout(() => tip.remove(), 300);
-    }, 3000);
 }
 
 /**
