@@ -139,11 +139,7 @@ function initMacDownloadDropdown() {
         item.addEventListener('click', function (e) {
             e.preventDefault();
             const chip = this.getAttribute('data-chip');
-
-            // 这里可以设置实际的下载链接
-            // const downloadUrl = chip === 'apple-silicon' 
-            //     ? 'YOUR_APPLE_SILICON_DOWNLOAD_URL' 
-            //     : 'YOUR_INTEL_DOWNLOAD_URL';
+            const downloadUrl = this.getAttribute('href');
 
             // 显示下载提示
             showDownloadTip('mac', chip);
@@ -151,8 +147,10 @@ function initMacDownloadDropdown() {
             // 关闭下拉菜单
             downloadDropdown.classList.remove('active');
 
-            // 实际下载逻辑
-            // window.location.href = downloadUrl;
+            // 触发下载
+            if (downloadUrl && downloadUrl !== '#') {
+                window.location.href = downloadUrl;
+            }
         });
     });
 
