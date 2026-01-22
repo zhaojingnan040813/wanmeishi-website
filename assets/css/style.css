@@ -766,11 +766,11 @@ section {
 }
 
 .download-card.windows::before {
-	background: #00a4ef;
+	background: transparent;
 }
 
 .download-card.mac::before {
-	background: #555555;
+	background: transparent;
 }
 
 .card-badge {
